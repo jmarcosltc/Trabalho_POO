@@ -11,6 +11,7 @@ public class Jogo {
 	private double somaAvaliacao;
 	private int qtdeDeAvaliacoes;
 	private int qtdeEstoque;
+	// teste
 	
 	
 	
