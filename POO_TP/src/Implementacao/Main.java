@@ -81,6 +81,13 @@ public class Main {
 		p1.adicionarItem(item1);
 		p1.adicionarItem(item2);
 		p1.adicionarItem(item3);
+		lj1.getClientes().get(0).finalizarPedido(p1);
+		
+		
+	    lj1.getClientes().get(0).avaliarJogo(j1, 5);
+	    lj1.getClientes().get(0).avaliarJogo(j5, 8.8);
+	
+		lj1.getCatalogo().visualizarCatalogo();
 		
 		p1.visualizarPedido();
 		System.out.println("\n **************************** \n\n");
@@ -92,7 +99,6 @@ public class Main {
 		System.out.println(lj1.getCatalogo().getJogos().get(0).getQtdeEstoque());
 		System.out.println("\n **************************** \n\n");
 		
-		lj1.getClientes().get(0).finalizarPedido(p1);
 		System.out.println(lj1.getCatalogo().getJogos().get(0).getQtdeEstoque());
 		System.out.println("\n **************************** \n\n");
 		
