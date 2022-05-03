@@ -1,46 +1,45 @@
 package Implementacao;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class Main {
 
-	public void menuUser() {
-		System.out.println("+-----------------------------------+");
-		System.out.println("|               MENU                |");
-		System.out.println("+-----------------------------------+");
-		System.out.println("|1 - Visualizar catalogo            |");
-		System.out.println("|2 - Comprar jogos                  |");             
-		System.out.println("|3 - Meus pedidos                   |");
-		System.out.println("|4 -                                |");
-		System.out.println("|5 - Sair da Conta                  |");
-		System.out.println("+-----------------------------------+");
-	}
-	
-	public void menuAdmin() {
-		System.out.println("+-----------------------------------+");
-		System.out.println("|               MENU                |");
-		System.out.println("+-----------------------------------+");
-		System.out.println("|1 - Cadastrar Cliente              |");
-		System.out.println("|2 - Visualizar catalogo            |");
-		System.out.println("|3 - Adicionar jogo                 |");             
-		System.out.println("|4 - Remover Jogo                   |");
-		System.out.println("|5 - Relatórios                     |");
-		System.out.println("|6 - Sair da Conta                  |");
-		System.out.println("+-----------------------------------+");
-	}
-	
-	// criar menu de relatorios
-	public void menuRelatorio() {
-		System.out.println("+-----------------------------------+");
-		System.out.println("|          GERAR RELATÓRIO          |");
-		System.out.println("+-----------------------------------+");
-		System.out.println("|1 - Dados do Cliente               |");
-		System.out.println("|2 - Jogos de Determinado Ano       |");             
-		System.out.println("|3 - Jogos Com Preço Abaixo de X    |");
-		System.out.println("|4 - Jogos de Um Determinado Gênero |");
-		System.out.println("|5 - Dados de Jogos à Venda         |");
-		System.out.println("+-----------------------------------+");
-	}
+//	public void menuUser() {
+//		System.out.println("+-----------------------------------+");
+//		System.out.println("|               MENU                |");
+//		System.out.println("+-----------------------------------+");
+//		System.out.println("|1 - Visualizar catalogo            |");
+//		System.out.println("|2 - Comprar jogos                  |");             
+//		System.out.println("|3 - Meus pedidos                   |");
+//		System.out.println("|4 -                                |");
+//		System.out.println("|5 - Sair da Conta                  |");
+//		System.out.println("+-----------------------------------+");
+//	}
+//	
+//	public void menuAdmin() {
+//		System.out.println("+-----------------------------------+");
+//		System.out.println("|               MENU                |");
+//		System.out.println("+-----------------------------------+");
+//		System.out.println("|1 - Cadastrar Cliente              |");
+//		System.out.println("|2 - Visualizar catalogo            |");
+//		System.out.println("|3 - Adicionar jogo                 |");             
+//		System.out.println("|4 - Remover Jogo                   |");
+//		System.out.println("|5 - Relatórios                     |");
+//		System.out.println("|6 - Sair da Conta                  |");
+//		System.out.println("+-----------------------------------+");
+//	}
+//	
+//	public void menuRelatorio() {
+//		System.out.println("+-----------------------------------+");
+//		System.out.println("|          GERAR RELATÓRIO          |");
+//		System.out.println("+-----------------------------------+");
+//		System.out.println("|1 - Dados do Cliente               |");
+//		System.out.println("|2 - Jogos de Determinado Ano       |");             
+//		System.out.println("|3 - Jogos Com Preço Abaixo de X    |");
+//		System.out.println("|4 - Jogos de Um Determinado Gênero |");
+//		System.out.println("|5 - Dados de Jogos à Venda         |");
+//		System.out.println("+-----------------------------------+");
+//	}
 	
 	public static void main(String[] args) {
 		
@@ -57,24 +56,53 @@ public class Main {
 		lj1.adicionarJogo(j2);
 		lj1.adicionarJogo(j3);
 		lj1.adicionarJogo(j4);
-		lj1.removerJogo(j1);
-		lj1.removerJogo(j3);
-		lj1.removerJogo(j2);
 		lj1.adicionarJogo(j5);
-		lj1.adicionarJogo(j6);
+		lj1.adicionarJogo(j6);					
 		
-		lj1.getCatalogo().visualizarCatalogo();
+		lj1.cadastrarCliente("Victor Adriel", "70070193665", "user", "user");
+//		lj1.cadastrarCliente("Gustavo Souza", "65214852365", "gust", "gus200");
+//		lj1.cadastrarCliente("Ben Dez", "95874584587", "bd10", "ben10");
 		
-		lj1.cadastrarCliente("Victor Adriel", "70070193665");
+//		lj1.gerarListaCliente();
 		
-		lj1.gerarListaCliente();
+		Item item1 = new Item(j1);
+		Item item2 = new Item(j5);
+		Item item3 = new Item(j6);
+		
+		Pedido p1 = new Pedido();
+		
+		p1.adicionarItem(item1);
+		p1.adicionarItem(item2);
+		p1.adicionarItem(item3);
+		
+		p1.visualizarPedido();
+		
+		p1.removerItem(item2);
+		
+		p1.visualizarPedido();
+		
+		lj1.getClientes().get(0).finalizarPedido(p1);
+		
+		
+		
+//		lj1.getClientes().get(0).visualizarJogosAdquiridos();
+		
+//		
+//		lj1.gerarRelCliente(0);
+//		
+//		lj1.gerarRelDataLancamento("2022");
+//		
+//		lj1.gerarRelPrecoAbaixo(1000.0);
+//		
+//		lj1.gerarRelGeneroJogo("esporte");
+//		
+//		lj1.gerarRelJogosAVenda();
 		
 		// Testar estoque de jogos (ver se o numero esta se alterando)
-		//
+		// 
 		
-		lj1.getClientes();
 		
-		lj1.gerarRelCliente(0);
+		
 		
 		
 		

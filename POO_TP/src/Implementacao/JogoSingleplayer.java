@@ -6,11 +6,10 @@ public class JogoSingleplayer extends Jogo{
 		super(titulo, dataLancamento, preco, genero, qtdeEstoque);	
 	}
 
+	// ok
 	@Override
 	public void visualizarJogo() {
 
-		System.out.println("+-----------------------------------+");
-		System.out.println("|                JOGO               |");
 		System.out.println("+-----------------------------------+");
 		System.out.print("|Nome: " + super.getTitulo());
 		Organiza.espaco(super.getTitulo().length());

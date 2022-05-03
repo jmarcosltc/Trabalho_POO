@@ -23,9 +23,10 @@ public class Loja {
 	}
 
 	public void visualizarLoja() {
-		
+		// ??
 	}
 
+	// ok
 	public void adicionarJogo(Jogo jogo) {
 
 		boolean entrou = false;
@@ -48,17 +49,18 @@ public class Loja {
 		}
 	}
 
+	// ok
 	public void removerJogo(Jogo jogo) {
 		this.catalogo.getJogos().remove(jogo);
 	}
 	
-	public void cadastrarCliente(String nome, String cpf) {
-		Cliente c = new Cliente(nome, cpf);
+	// ok
+	public void cadastrarCliente(String nome, String cpf, String usuario, String senha) {
+		Cliente c = new Cliente(nome, cpf, usuario, senha);
 		this.clientes.add(c);
 	}
 	
-	// COLOCAR UM REMOVER CLIENTEEE TBM!!!!
-	
+	// ok
 	public void gerarListaCliente() {
 		System.out.println("+-----------------------------------+");
 		System.out.println("|         LISTA DE CLIENTES         |");
@@ -82,6 +84,7 @@ public class Loja {
 		
 	}
 	
+	// ok
 	public void gerarRelCliente(int index) {
 		System.out.println("+-----------------------------------+");
 		System.out.println("|              RELATÓRIO            |");
@@ -89,6 +92,7 @@ public class Loja {
 		this.clientes.get(index).visualizarCliente();
 	}
 
+	// ok
 	public void gerarRelDataLancamento(String ano) {
 
 		boolean entrou = false;
@@ -98,19 +102,7 @@ public class Loja {
 		System.out.println("+-----------------------------------+");
 		for (Jogo jg : this.catalogo.getJogos()) {
 			if (jg.getDataLancamento().equals(ano)) {
-				System.out.printf("|Jogo: %s", jg.getTitulo());
-				Organiza.espaco(jg.getTitulo().length());
-
-				System.out.printf("|Gênero: %s", jg.getGenero());
-				Organiza.espaco(jg.getGenero().length() + 2);
-
-				System.out.printf("|Lançamento: %s", jg.getDataLancamento());
-				Organiza.espaco(jg.getDataLancamento().length() + 6);
-
-				System.out.printf("|Preço: R$%.2f", jg.getPreco());
-				Organiza.espaco(jg.getPreco().toString().length() + 4);
-
-				System.out.printf("+-----------------------------------+\n");
+				jg.visualizarJogo();
 				entrou = true;
 			}
 
@@ -121,6 +113,7 @@ public class Loja {
 		}
 	}
 
+	// ok
 	public void gerarRelPrecoAbaixo(Double preco) {
 		
 		boolean entrou = false;
@@ -132,20 +125,7 @@ public class Loja {
 		System.out.println("+-----------------------------------+");
 		for (Jogo jg : this.catalogo.getJogos()) {
 			if(jg.getPreco() < preco) {
-				System.out.printf("|Jogo: %s", jg.getTitulo());
-				Organiza.espaco(jg.getTitulo().length());
-	
-				System.out.printf("|Gênero: %s", jg.getGenero());
-				Organiza.espaco(jg.getGenero().length() + 2);
-	
-				System.out.printf("|Lançamento: %s", jg.getDataLancamento());
-				Organiza.espaco(jg.getDataLancamento().length() + 6);
-	
-				System.out.printf("|Preço: R$%.2f", jg.getPreco());
-				Organiza.espaco(jg.getPreco().toString().length() + 4);
-	
-				System.out.printf("+-----------------------------------+\n");
-				
+				jg.visualizarJogo();
 				entrou = true;
 			}
 		}
@@ -156,6 +136,8 @@ public class Loja {
 		}
 	}
 
+	// ok
+	
 	public void gerarRelGeneroJogo(String genero) {
 		
 		boolean entrou = false;
@@ -166,20 +148,7 @@ public class Loja {
 		System.out.println("+-----------------------------------+");
 		for (Jogo jg : this.catalogo.getJogos()) {
 			if(jg.getGenero().equalsIgnoreCase(genero)) {
-				System.out.printf("|Jogo: %s", jg.getTitulo());
-				Organiza.espaco(jg.getTitulo().length());
-	
-				System.out.printf("|Gênero: %s", jg.getGenero());
-				Organiza.espaco(jg.getGenero().length() + 2);
-	
-				System.out.printf("|Lançamento: %s", jg.getDataLancamento());
-				Organiza.espaco(jg.getDataLancamento().length() + 6);
-	
-				System.out.printf("|Preço: R$%.2f", jg.getPreco());
-				Organiza.espaco(jg.getPreco().toString().length() + 4);
-	
-				System.out.printf("+-----------------------------------+\n");
-				
+				jg.visualizarJogo();
 				entrou = true;
 			}
 		}
@@ -190,24 +159,13 @@ public class Loja {
 		}
 	}
 
+	// ok
 	public void gerarRelJogosAVenda() {
 		System.out.println("+-----------------------------------+");
 		System.out.println("|           JOGOS À VENDA           | ");
 		System.out.println("+-----------------------------------+");
 		for (Jogo jg : catalogo.getJogos()) {
-			System.out.printf("|Jogo: %s", jg.getTitulo());
-			Organiza.espaco(jg.getTitulo().length());
-
-			System.out.printf("|Gênero: %s", jg.getGenero());
-			Organiza.espaco(jg.getGenero().length() + 2);
-
-			System.out.printf("|Lançamento: %s", jg.getDataLancamento());
-			Organiza.espaco(jg.getDataLancamento().length() + 6);
-
-			System.out.printf("|Preço: R$%.2f", jg.getPreco());
-			Organiza.espaco(jg.getPreco().toString().length() + 4);
-
-			System.out.printf("+-----------------------------------+\n");
+			jg.visualizarJogo();
 		}
 	}
 }

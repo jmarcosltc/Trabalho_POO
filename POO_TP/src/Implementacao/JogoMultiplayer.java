@@ -13,11 +13,10 @@ public class JogoMultiplayer extends Jogo{
 		return numMaxDeJogadores;
 	}
 
+	//ok
 	@Override
 	public void visualizarJogo() {
 
-		System.out.println("+-----------------------------------+");
-		System.out.println("|                JOGO               |");
 		System.out.println("+-----------------------------------+");
 		System.out.print("|Nome: " + super.getTitulo());
 		Organiza.espaco(super.getTitulo().length());
@@ -30,7 +29,7 @@ public class JogoMultiplayer extends Jogo{
 		
 		System.out.println("|Modo: MULTIPLAYER                  |");
 		System.out.print("|Número máximo de jogadores: " + this.numMaxDeJogadores);
-		Organiza.espaco(this.numMaxDeJogadores.toString().length());
+		Organiza.espaco(this.numMaxDeJogadores.toString().length() + 22);
 		
 		System.out.printf("|Preço: R$%.2f", super.getPreco());
 		Organiza.espaco(super.getPreco().toString().length() + 4);

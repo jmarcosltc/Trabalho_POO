@@ -8,10 +8,11 @@ public class Cliente {
 	private Integer idCliente;
 	private String nome;
 	private String cpf;
+	private Login login;
 	private List<Pedido> pedidos = new ArrayList<>();
 	private List<Jogo> jogosAdquiridos = new ArrayList<>();
 
-	public Cliente(String nome, String cpf) {
+	public Cliente(String nome, String cpf, String usuario, String senha) {
 		contador++;
 		this.idCliente = contador;
 		this.nome = nome;
@@ -57,11 +58,11 @@ public class Cliente {
 	}
 	
 	public void finalizarPedido(Pedido pedido) {
-		System.out.println("Pagamento efetuado com sucesso!");
+		System.out.println("Pedido realizado!");
 		for (Item item : pedido.getItens()) {
 			Jogo jg = item.getJogo();
 			setJogosAdquiridos(jg);
-			jg.setQtdeEstoque(jg.getQtdeEstoque() - item.getQuantidade());
+			jg.setQtdeEstoque(jg.getQtdeEstoque() - 1 /*item.getQuantidade()*/);
 		}
 		this.pedidos.add(pedido);
 		pedido.setStatus("PAGO");
@@ -93,16 +94,7 @@ public class Cliente {
 			System.out.println("+-----------------------------------+");
 		} else {
 			for (Jogo jg : jogosAdquiridos) {
-				System.out.printf("|Jogo: %s", jg.getTitulo());
-				Organiza.espaco(jg.getTitulo().length());
-
-				System.out.printf("|Gênero: %s", jg.getGenero());
-				Organiza.espaco(jg.getGenero().length() + 2);
-
-				System.out.printf("|Lançamento: %s", jg.getDataLancamento());
-				Organiza.espaco(jg.getDataLancamento().length() + 6);
-
-				System.out.printf("+-----------------------------------+\n");
+				jg.visualizarJogo();
 			}
 		}
 	}

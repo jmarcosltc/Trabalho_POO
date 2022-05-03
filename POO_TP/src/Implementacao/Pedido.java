@@ -35,12 +35,12 @@ public class Pedido {
 
 	public void adicionarItem(Item item) {
 		this.itens.add(item);
-		this.valorTotal += item.getQuantidade() * item.getJogo().getPreco();
+		this.valorTotal += /*item.getQuantidade() * */ item.getJogo().getPreco();
 	}
 	
 	public void removerItem(Item item) {
 		this.itens.remove(item);
-		this.valorTotal -= item.getQuantidade() * item.getJogo().getPreco();
+		this.valorTotal -= /* item.getQuantidade() * */ item.getJogo().getPreco();
 	}
 	
 	public void visualizarPedido() {
@@ -64,9 +64,10 @@ public class Pedido {
 			System.out.print("|Jogo: " + item.getJogo().getTitulo());
 			Organiza.espaco(item.getJogo().getTitulo().length());
 			
+			/*
 			System.out.print("|Quantidade: " + item.getQuantidade());
 			Organiza.espaco(item.getQuantidade().toString().length() + 6);
-			
+			*/
 			
 		}
 		System.out.println("+-----------------------------------+");

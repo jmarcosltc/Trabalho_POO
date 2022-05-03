@@ -1,6 +1,6 @@
 package Implementacao;
-
-public class Jogo {
+// ok
+public abstract class Jogo {
 	private static int contador = 0;
 	private int idJogo;
 	private String genero;
@@ -11,8 +11,6 @@ public class Jogo {
 	private double somaAvaliacao;
 	private int qtdeDeAvaliacoes;
 	private int qtdeEstoque;
-	
-	
 	
 	public Jogo(String titulo, String dataLancamento, double preco
 			, String genero, int qtdeEstoque) {
@@ -70,30 +68,6 @@ public class Jogo {
 		this.avaliacaoMedia = this.somaAvaliacao / this.qtdeDeAvaliacoes;
 	}
 	
-	public void visualizarJogo() {
-		System.out.println("+-----------------------------------+");
-		System.out.println("|                JOGO               |");
-		System.out.println("+-----------------------------------+");
-		System.out.print("|Nome: " + this.titulo);
-		Organiza.espaco(this.titulo.length());
-		
-		System.out.print("|Genero: " + this.genero);
-		Organiza.espaco(this.genero.length() + 2);
-		
-		System.out.print("|Ano de lançamento: " + this.dataLancamento);
-		Organiza.espaco(this.dataLancamento.length() + 13);
-		
-		System.out.printf("|Avaliação: %.1f", this.avaliacaoMedia);
-		if(this.avaliacaoMedia >= 10) {
-			Organiza.espaco(9);
-		} else {
-			Organiza.espaco(8);
-		}
-		
-		System.out.printf("|Preço: R$%.2f", this.preco);
-		Organiza.espaco(this.preco.toString().length() + 4);
-		
-		System.out.println("+-----------------------------------+");
-		
-	}
+	public abstract void visualizarJogo();
+				
 }

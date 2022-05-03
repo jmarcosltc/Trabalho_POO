@@ -10,7 +10,8 @@ public class Catalogo {
 	public List<Jogo> getJogos() {
 		return jogos;
 	}
-
+	
+	// ok
 	public void visualizarCatalogo() {
 		
 		aux = this.jogos.size();
