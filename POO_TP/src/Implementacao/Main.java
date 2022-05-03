@@ -46,6 +46,8 @@ public class Main {
 		Loja lj1 = new Loja();	
 		
 		Jogo j1 = new JogoSingleplayer("Grand Theft Auto","2002",150 ,"Estrategia", 10);
+		// teste quantidade em estoque. 
+		Jogo j11 = new JogoSingleplayer("Grand Theft Auto","2002",150 ,"Estrategia", 10);
 		Jogo j2 = new JogoMultiplayer("NFS","2022",50 ,"Corrida", 5, 1);
 		Jogo j3 = new JogoMultiplayer("GOW","2010", 250 ,"RPG", 7, 5);
 		Jogo j4 = new JogoSingleplayer("CSGO","2022", 80 ,"FPS", 11);
@@ -53,11 +55,16 @@ public class Main {
 		Jogo j6 = new JogoSingleplayer("PES 21","2021", 200 ,"Esporte", 6);
 		
 		lj1.adicionarJogo(j1);
+		lj1.adicionarJogo(j11);
 		lj1.adicionarJogo(j2);
 		lj1.adicionarJogo(j3);
 		lj1.adicionarJogo(j4);
 		lj1.adicionarJogo(j5);
-		lj1.adicionarJogo(j6);					
+		lj1.adicionarJogo(j6);	
+		
+		lj1.getCatalogo().visualizarCatalogo();
+		
+		System.out.println("\n **************************** \n\n");
 		
 		lj1.cadastrarCliente("Victor Adriel", "70070193665", "user", "user");
 //		lj1.cadastrarCliente("Gustavo Souza", "65214852365", "gust", "gus200");
@@ -76,83 +83,40 @@ public class Main {
 		p1.adicionarItem(item3);
 		
 		p1.visualizarPedido();
+		System.out.println("\n **************************** \n\n");
 		
 		p1.removerItem(item2);
 		
 		p1.visualizarPedido();
+		System.out.println("\n **************************** \n\n");
+		System.out.println(lj1.getCatalogo().getJogos().get(0).getQtdeEstoque());
+		System.out.println("\n **************************** \n\n");
 		
 		lj1.getClientes().get(0).finalizarPedido(p1);
+		System.out.println(lj1.getCatalogo().getJogos().get(0).getQtdeEstoque());
+		System.out.println("\n **************************** \n\n");
 		
+		lj1.getClientes().get(0).visualizarJogosAdquiridos();
+		System.out.println("\n **************************** \n\n");
 		
+		lj1.gerarRelCliente(0);
+		System.out.println("\n **************************** \n\n");
 		
-//		lj1.getClientes().get(0).visualizarJogosAdquiridos();
+		lj1.gerarRelDataLancamento("2022");
+		System.out.println("\n **************************** \n\n");
 		
-//		
-//		lj1.gerarRelCliente(0);
-//		
-//		lj1.gerarRelDataLancamento("2022");
-//		
-//		lj1.gerarRelPrecoAbaixo(1000.0);
-//		
-//		lj1.gerarRelGeneroJogo("esporte");
-//		
-//		lj1.gerarRelJogosAVenda();
+		lj1.gerarRelPrecoAbaixo(1000.0);
+		System.out.println("\n **************************** \n\n");
+		
+		lj1.gerarRelGeneroJogo("esporte");
+		System.out.println("\n **************************** \n\n");
+		
+		lj1.gerarRelJogosAVenda();
 		
 		// Testar estoque de jogos (ver se o numero esta se alterando)
 		// 
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-//		Item it1 = new Item(j1, 2);
-//		Item it2 = new Item(j3, 15);
-//		Item it3 = new Item(j6, 1);
-//		Item it4 = new Item(j4, 1);
-//		
-//		Pedido p1 = new Pedido();
-//		p1.adicionarItem(it1);
-//		p1.adicionarItem(it2);
-//		p1.adicionarItem(it3);
-//		p1.adicionarItem(it4);
-//		
-//		p1.visualizarPedido();
-//		
-//		lj1.adicionarJogo(j1);
-//		lj1.adicionarJogo(j2);
-//		lj1.adicionarJogo(j3);
-//		lj1.adicionarJogo(j4);
-//		lj1.adicionarJogo(j5);
-//		lj1.adicionarJogo(j6);
-//		
-//		lj1.cadastrarCliente("Victor Adriel", "700.701.936-65");
-//		lj1.cadastrarCliente("Gustavo Souza", "845.701.471-78");
-//		lj1.cadastrarCliente("Valeria Silva", "458.236.452-14");
-//		lj1.cadastrarCliente("João Vinicius", "746.859.321-75");
-		
-//		lj1.getCatalogo().visualizarCatalogo();
-//		Scanner entrada = new Scanner(System.in);
-//		
-//		lj1.gerarListaCliente();
-//		System.out.print("Gerar relatório de cliente de ID: ");
-//		int x = entrada.nextInt();
-//		
-//		lj1.gerarRelCliente(x - 1);
-//		lj1.gerarRelCliente(1);	
-		
-		
-//		lj1.getCatalogo().visualizarCatalogo();
-		
-	
+
 	}
 
 }
