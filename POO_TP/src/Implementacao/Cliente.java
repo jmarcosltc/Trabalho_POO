@@ -17,6 +17,7 @@ public class Cliente {
 		this.idCliente = contador;
 		this.nome = nome;
 		this.cpf = cpf;
+		this.login = new Login(usuario, senha);
 	}
 
 	public Integer getIdCliente() {
@@ -33,6 +34,10 @@ public class Cliente {
 
 	public List<Jogo> getJogosAdquiridos() {
 		return jogosAdquiridos;
+	}
+	
+	public Login getLogin() {
+		return login;
 	}
 
 	public void setJogosAdquiridos(Jogo jogoAdquirido) {

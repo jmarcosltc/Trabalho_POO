@@ -54,10 +54,23 @@ public class Loja {
 		this.catalogo.getJogos().remove(jogo);
 	}
 	
-	// ok
-	public void cadastrarCliente(String nome, String cpf, String usuario, String senha) {
-		Cliente c = new Cliente(nome, cpf, usuario, senha);
-		this.clientes.add(c);
+	// ok ALTERADO!
+	public int cadastrarCliente(String nome, String cpf, String usuario, String senha) {
+		boolean entrou = false;
+		
+		for(Cliente cliente: this.clientes) {
+			if(cliente.getLogin().getUsuario().equalsIgnoreCase(usuario)) {
+				entrou = true;	
+			}		
+		}
+		
+		if(!entrou) {
+			Cliente c = new Cliente(nome, cpf, usuario, senha);
+			this.clientes.add(c);
+			return 1;
+		} else {
+			return -1;
+		}	
 	}
 	
 	// ok

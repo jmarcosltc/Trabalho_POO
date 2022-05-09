@@ -66,7 +66,7 @@ public class Main {
 		
 		System.out.println("\n **************************** \n\n");
 		
-		lj1.cadastrarCliente("Victor Adriel", "70070193665", "user", "user");
+		lj1.cadastrarCliente("Victor Adriel", "70070193665", "vabp", "k90");
 //		lj1.cadastrarCliente("Gustavo Souza", "65214852365", "gust", "gus200");
 //		lj1.cadastrarCliente("Ben Dez", "95874584587", "bd10", "ben10");
 		
@@ -83,6 +83,8 @@ public class Main {
 		p1.adicionarItem(item3);
 		lj1.getClientes().get(0).finalizarPedido(p1);
 		
+		String testee = lj1.getClientes().get(0).getLogin().getUsuario();
+		System.out.println(testee);
 		
 	    lj1.getClientes().get(0).avaliarJogo(j1, 5);
 	    lj1.getClientes().get(0).avaliarJogo(j5, 8.8);
