@@ -45,8 +45,7 @@ public class Main {
 		
 		Loja lj1 = new Loja();	
 		
-		Jogo j1 = new JogoSingleplayer("Grand Theft Auto","2002",150 ,"Estrategia", 10);
-		// teste quantidade em estoque. 
+		Jogo j1 = new JogoSingleplayer("Grand Theft Auto","2002",150 ,"Estrategia", 10); 
 		Jogo j11 = new JogoSingleplayer("Grand Theft Auto","2002",150 ,"Estrategia", 10);
 		Jogo j2 = new JogoMultiplayer("NFS","2022",50 ,"Corrida", 5, 1);
 		Jogo j3 = new JogoMultiplayer("GOW","2010", 250 ,"RPG", 7, 5);
@@ -120,6 +119,8 @@ public class Main {
 		System.out.println("\n **************************** \n\n");
 		
 		lj1.gerarRelJogosAVenda();
+		
+		lj1.visualizarLoja();
 		
 		// Testar estoque de jogos (ver se o numero esta se alterando)
 		// 

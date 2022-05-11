@@ -9,7 +9,7 @@ public class Loja {
 	private Catalogo catalogo;
 	
 	public Loja() {
-		this.nome = "Jogos Dynamic Game";
+		this.nome = "Dynamic Game";
 		this.clientes = new ArrayList<>();
 		this.catalogo = new Catalogo();
 	}
@@ -23,7 +23,16 @@ public class Loja {
 	}
 
 	public void visualizarLoja() {
-		// ??
+		System.out.println("+-----------------------------------+");
+		System.out.println("|               LOJA                |");
+		System.out.println("+-----------------------------------+");
+		System.out.print("|Nome: " + this.nome);
+		Organiza.espaco(this.nome.length());
+		System.out.println("+-----------------------------------+");
+		System.out.printf("|Número de clientes: #%d             |\n", this.clientes.size());
+		System.out.println("+-----------------------------------+");
+		System.out.printf("|Jogos no catalogo: #%d              |\n", this.catalogo.getJogos().size());
+		System.out.println("+-----------------------------------+");
 	}
 
 	// ok
@@ -65,8 +74,7 @@ public class Loja {
 		}
 		
 		if(!entrou) {
-			Cliente c = new Cliente(nome, cpf, usuario, senha);
-			this.clientes.add(c);
+			this.clientes.add(new Cliente(nome, cpf, usuario, senha));
 			return 1;
 		} else {
 			return -1;
